@@ -1,0 +1,27 @@
+//手機版型各斷點
+@mixin  pad {
+    @media (max-width:768px) {
+        @content
+    }
+}
+@mixin  pad-l {
+    @media (max-width:767px) {
+        @content
+    }
+}
+@mixin  iphone7 {
+    @media (max-width:567px) {
+        @content
+    }
+}
+@mixin  mobile {
+    @media (max-width:480px) {
+        @content
+    }
+}
+
+@mixin  iphone5 {
+    @media (max-width:320px) {
+        @content
+    }
+}

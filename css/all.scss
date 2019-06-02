@@ -1,0 +1,701 @@
+@import'reast';
+@import'ipad';
+@mixin Acolor($colour){
+    background: $colour;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+@mixin flex {
+    display: flex;
+    align-items: stretch;
+}
+@mixin fourFloat($width,$margin){
+    float: left;
+    width: $width;
+    margin: $margin;
+}
+.wrap{
+    max-width: 100%;
+}
+.header-bg{
+    background-image: url(../img/bg_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    position: relative;
+    padding: 4% 5%;
+    color: white;
+    .header{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        
+        height: 730px;
+        background:rgba(0,0,0,0.5);
+        .topmenu{
+            max-width: 1024px;
+            margin: 30px auto;
+            padding: 10px;
+            h1{
+                float: left;
+                font-size: 28px;
+                font-weight:bold;
+            }
+            ul{
+                line-height: 30px;
+                float: right;
+                li{
+                    float: left;
+                    margin-right: 15px;
+                    a{
+                        text-decoration: none;
+                        font-size: 18px;
+                        color: white;
+                    }
+                    .colorgreen{
+                        color: green;
+                    }
+                    .greenA{
+                        @include Acolor(green);
+                    }
+                }
+            }
+            .showmenu{
+                display: none;
+                color: white;
+            }
+        }
+        .menuActive{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: black;
+            margin: 0 auto;
+        }
+        .watchVideo{
+            max-width: 1024px;
+            margin: 150px auto;
+            font-weight:bold;
+            padding: 0 50px;
+            div{
+                border: 1px solid white;
+                display:inline-block;
+                padding: 10px;
+                margin-bottom: 30px;
+            }
+            h2{
+                letter-spacing: 2px;
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+            p{
+                font-size: 28px;
+                opacity:0.5
+            }
+        }
+    }
+}
+@include pad(){
+    .header-bg{
+        .header{
+            .topmenu{
+                position: fixed;
+                margin: 0 auto;
+                top: 0px;
+                left: 0;
+                right: 0;
+                height: 50px;
+                line-height: 50px;
+                background: black;
+                z-index: 129999999990;
+                ul{
+                    max-height: 0px;
+                    overflow: hidden;
+                    transition: max-height 2.3s;
+                    margin-top: 1px;
+                    position: absolute;
+                    top: 50px;
+                    left: 0;
+                    right: 0;
+                    padding: 10px 0;
+                    background: black;
+                    li{
+                        float: none;
+                        padding: 2px;
+                        text-align: center;
+                    }
+                }
+                .showmenu{
+                    display: block;
+                    float: right;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+.menu-show .header-bg .header .topmenu ul{
+    max-height: 500px
+}
+.threeInt{
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    ul{
+        position: absolute;
+        top:-100px;
+        li{
+            @include fourFloat(25.33333%,1%);
+            background: white;
+            z-index: 5;
+            text-align: center;
+            padding: 5% 3%;
+            border-radius: 2%;
+            div{
+                //將背景漸層修改為文字漸層
+                background:linear-gradient(to right,green,yellow);
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+            h2{
+                margin: 20px 0;
+                letter-spacing: 2px;
+            }
+            p{
+                line-height: 24px;
+                opacity: 0.5;
+                font-size: 18px;
+                margin: 30px 0;
+            }
+            a{
+                @include Acolor(green);
+            }
+        }
+    }
+}
+@include iphone7(){
+    .threeInt{
+        ul{
+            position: relative;
+            li{
+                float: none;
+                width: 90%;
+            }
+        }
+    }
+}
+@include pad-l(){
+    .threeInt{
+        ul{
+            li{
+            }
+        }
+    }
+}
+.content{
+    max-width: 1024px;
+    margin: 400px auto 0;
+    @include flex;
+    div{
+        flex: 1;
+        color: white;
+    }
+    .fromtext-bg{
+        background-image: url(../img/about.jpg);
+        background-position:center;
+        background-size: cover;
+        height: 700px;
+        position: relative;
+        padding: 5%;
+        .fromtext{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 740px;
+            background:rgba(0,0,0,0.5);
+            text-align: center;
+            padding: 10% 0px;
+            ::-webkit-input-placeholder{ 
+                color: white; 
+                font-size: 18px;
+            }
+            div{
+                font-size: 14px;
+            }
+            h3{
+                font-size: 28px;
+                font-weight:bold;
+            }
+            input,select{
+                width: 80%;
+                border: transparent;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+                color: rgba(255, 255, 255, 1);
+                background: transparent;
+                margin: 10% 0;
+                padding: 10px 0;
+            }
+            .Inpbutton{
+                @include Acolor(green);
+                padding: 15px;
+                background: orange;
+                border: none;
+            }
+        }
+    }
+    .Introduction{
+        flex: 3;
+        padding: 3%;
+        color: black;
+        div{
+            color:green;
+            margin: 5% 0;
+            letter-spacing: 2px;
+            font-size: 24px;
+        }
+        h3{
+            font-size: 32px;
+            font-weight:bold;
+            margin: 5% 0;
+        }
+        p{
+            margin: 5% 0;
+            opacity: 0.5;
+            font-size: 20px;
+        }
+        ul{
+            li{
+                @include fourFloat(20.33333%,2%);
+                border: 1px solid rgba(0,0,0,0.5);
+                height: 90px;
+                text-align: center;
+                padding: 40px 0;
+                p{
+                    font-size: 16px;
+                    opacity: 0.2;
+                }
+            }
+            @include pad(){
+                li{
+                    @include fourFloat(44.33333%,2%);
+                }
+            }
+        }
+    }
+}
+@include pad-l(){
+    .content{
+        max-width: 512px;
+        display: block;
+        .fromtext-bg{
+            height: 400px;
+            .fromtext{
+                height: 400px;
+                padding: 5% 2%;
+                input,select{
+                    width: 100%;
+                    border: transparent;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+                    color: rgba(255, 255, 255, 1);
+                    background: transparent;
+                    margin: 1% 0;
+                    padding: 4% 0;
+                }
+            }
+        }
+        .Introduction{
+            ul{
+                li{
+                    float: none;
+                    width: 98%;
+                }
+            }
+        }
+    }
+}
+@include iphone7(){
+    .content{
+        margin: 0 auto;
+    }
+}
+.hrtext{
+    text-align: center;
+    margin: 80px 0;
+    div{
+        color: green;
+        font-size: 20px;
+    }
+    h3{
+        color: #000;
+        font-weight: bold;
+        margin: 30px 0;
+        font-size: 32px;
+    }
+    p{
+        opacity: 0.5;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    a{
+        margin:10px;
+    }
+}
+.swiper-container{
+    max-width: 800px;
+    height: 500px;
+    .swiper-wrapper{
+        .swiper-slide{
+            @include fourFloat(21%,2%); 
+            h2{
+                color: #000;
+                font-weight: bold;
+                margin: 10px 0;
+                font-size: 28px;
+            }
+            p{
+                opacity: 0.3;
+                font-size: 18px; 
+            }
+        }
+    }
+}
+@include pad(){
+    .swiper-container{
+        .swiper-wrapper{
+            .swiper-slide{
+                @include fourFloat(43%,3%);
+            }
+        }
+    }
+}
+@include iphone7(){
+    .swiper-container{
+        .swiper-wrapper{
+            .swiper-slide{
+                float: none;
+                width: 98%;
+                margin: 1%;
+            }
+        }
+    }
+}
+.personal{
+    margin-bottom: 50px;
+    ul{
+        li{
+            position: relative;
+            overflow: hidden;
+            @include fourFloat(25%,0%);
+            height: 500px;
+            &:hover .title{
+                top:0px;
+            }
+            img{
+                width: 100%;
+            }
+            .title{
+                margin: 0 auto;
+                transition: all 1s;  
+                background: white;
+                width: 100%;
+                height: 350px;
+                position: absolute;
+                padding-top: 150px;
+                top: 500px;
+            }
+        }
+    }
+}
+@include pad(){
+    .personal{
+        ul{
+            li{
+                @include fourFloat(50%,0%);
+            }
+        }
+    }
+}
+@include iphone7(){
+    .personal{
+        ul{
+            li{
+                float: none;
+                width: 80%;
+                padding: 0 10%;
+                img{
+                    height: auto;
+                }
+                .title{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+.SelfIntroduction{
+    max-width: 1024px;
+    margin: 0 auto;
+    @include flex();
+    div{
+        flex: 1;
+    }
+    .Introduction{
+        padding: 5%;
+        color: black;
+        i{
+            opacity: 0.2;
+        }
+        div{
+            color:green;
+            margin: 5% 0;
+            font-size: 24px;
+            font-weight:bold;
+
+        }
+        h3{
+            font-size: 18px;
+        }
+        p{
+            margin: 5% 0;
+            opacity: 0.5;
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+}
+@include iphone7(){
+    .SelfIntroduction{
+        display: block;
+    }
+}
+.Blog{
+    max-width: 1024px;
+    margin: 0 auto;
+    ul{
+        li{
+            @include fourFloat(31.33333%,3% 1%);
+            background: white;
+            border-radius: 2%;
+            line-height: 24px;
+            position: relative;
+            .timeTop{
+                position: absolute;
+                top: -10px;
+                left: 10%;
+                @include flex();
+                div{
+                    flex: 1;
+                    font-size: 50px;
+                    font-weight: bold;
+                    div{
+                        float: none;
+                        font-size: 18px;
+                        line-height: 15px;
+                        padding-left: 5%;
+                    }
+                }
+            }
+            img{
+                height: 350px;
+            }
+            .Atext{
+                text-decoration: none;
+                color: #000;
+                font-size: 24px;
+                font-weight: bold;
+            }
+            p{
+                opacity: 0.5;
+                font-size: 18px;
+                margin: 20px 0 40px;
+            }
+            .orangeBtn{
+                @include Acolor(orange);
+                color: white;
+            }
+            .message{
+                float: right;
+                opacity: 0.5;
+                i{
+                  margin-left: 15px; 
+                }
+            }
+        }
+    }
+}
+@include iphone7(){
+    .Blog{
+        ul{
+            li{
+                float: none;
+                width: 98%;
+                margin: 10% 1%;
+            }
+        }
+    }
+}
+.map{
+    max-width: 1024px;
+    margin: 0 auto;
+    @include flex();
+    div{
+        flex: 1;
+        input,textarea{
+            width: 70%;
+            padding: 10px;
+            margin: 10px;
+        }
+        .Inpbutton{
+            width: 50%;
+            @include Acolor(orange);
+            color: white;
+            border: none;
+            padding: 20px;
+        }
+    }
+}
+@include pad-l(){
+    .map{
+        text-align: center;
+        display: block;
+    }
+}
+.connection{
+    max-width: 1024px;
+    margin: 0 auto;
+    ul{
+        li{
+            text-align: center;
+            @include fourFloat(22.33333%,10% 1%);
+            border: 1px solid rgba(0,0,0,0.1);
+            padding: 30px 0;
+            height: 300px;
+            div{
+                background:rgba(220,220,220,0.4);
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin: 0 auto;
+                i{
+                    line-height: 100px;
+                    background:linear-gradient(to right,green,orange);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+            }
+            h2{
+                margin: 20px 0;
+                letter-spacing: 2px;
+            }
+            p{
+                line-height: 24px;
+                opacity: 0.8;
+                font-size: 18px;
+                margin: 30px 0;
+            }
+        }
+    }
+}
+@include pad(){
+    .connection{
+        ul{
+            li{
+                @include fourFloat(42.33333%,3%);
+                height: 250px;
+            }
+        }
+    }
+}
+@include iphone7(){
+    .connection{
+        ul{
+            li{
+                float: none;
+                width: 95%;
+            }
+        }
+    }
+}
+.footer{
+    padding: 3% 0;
+    max-width: 1024px;
+    margin: 0 auto;
+    background: black;
+    color: white;
+    div{
+        @include fourFloat(20.33333%,2%);
+        border: 1px solid black;
+        height: 300px;
+        h2{
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight:bold;
+        }
+        p{
+            line-height: 24px;
+            color: white;
+            opacity: 0.5;
+        }
+        a{
+            text-decoration: none;
+            i{
+                background: rgba(255,255,255,0.4);
+                border-radius: 50%;
+                margin: 5px;
+                opacity: 0.5;
+                color:white;
+            }
+        }
+        ul{
+            list-style-type:disc;
+            padding-left:20px;
+            li{
+                margin:10px;
+                opacity: 0.5;
+                a{
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
+    .Copyright{
+       text-align: center;
+    }
+   
+}
+@include pad-l(){
+    .footer{
+        div{
+            @include fourFloat(45.33333%,1%);
+            margin: 1% 0;
+        }
+    }
+}
+@include iphone7(){
+    .footer{
+        div{
+            float: none;
+            width: 98%;
+            margin: 0% 0;
+            height: auto;
+        }
+        .Copyright{
+            margin-top: 10px;
+         }
+    }
+}
+.clearfix:after{
+	content:'';
+    display:table;
+	clear: both;
+}
