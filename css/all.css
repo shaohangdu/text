@@ -807,10 +807,17 @@ img {
 
 .footer div a i {
   background: rgba(255, 255, 255, 0.4);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
   border-radius: 50%;
-  margin: 5px;
   opacity: 0.5;
   color: white;
+}
+
+.footer div a i:hover {
+  background-color: rgba(238, 13, 24, 0.7);
 }
 
 .footer div ul {
