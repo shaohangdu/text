@@ -323,6 +323,10 @@ img {
   padding: 10px 0;
 }
 
+.content .fromtext-bg .fromtext select option {
+  background-color: black;
+}
+
 .content .fromtext-bg .fromtext .Inpbutton {
   background: green;
   color: white;
@@ -449,12 +453,6 @@ img {
   height: 500px;
 }
 
-.swiper-container .swiper-wrapper .swiper-slide {
-  float: left;
-  width: 21%;
-  margin: 2%;
-}
-
 .swiper-container .swiper-wrapper .swiper-slide h2 {
   color: #000;
   font-weight: bold;
@@ -502,6 +500,7 @@ img {
 
 .personal ul li img {
   width: 100%;
+  height: 500px;
 }
 
 .personal ul li .title {
